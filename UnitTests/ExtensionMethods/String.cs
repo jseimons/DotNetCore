@@ -13,12 +13,12 @@ namespace UnitTests.ExtensionMethods
             const string isTrue1 = "abba";
             const string isTrue2 = "abaaba";
             
-            Assert.Equal(true, isTrue1.IsPalindrome());
-            Assert.Equal(true, isTrue2.IsPalindrome());
+            Assert.True(isTrue1.IsPalindrome());
+            Assert.True(isTrue2.IsPalindrome());
 
             const string isFalse1 = "";
             
-            Assert.Equal(false, isFalse1.IsPalindrome());
+            Assert.False(isFalse1.IsPalindrome());
         }
     }
 }
