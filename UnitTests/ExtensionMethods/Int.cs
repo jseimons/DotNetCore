@@ -34,5 +34,33 @@ namespace UnitTests.ExtensionMethods
             Assert.True( 
                 testCase4Input.Factorial() == testCase4ExpectedResult);
         }
+
+        [Fact]
+        public static void ReverseNumber()
+        {
+            // A palindromic number reads the same both ways. 
+            // ... The largest palindrome made from the product of 
+            // ... two 2-digit numbers is 9009 = 91 × 99.
+
+            const int minValueTwoDigits      = 10;
+            const int maxValueTwoDigits      = 99;
+            const int expectedValueTwoDigits = 9009;
+
+            int largestPalindrome = 0;
+            for (int i = minValueTwoDigits; i <= maxValueTwoDigits; i++)
+            {
+                for (int j = minValueTwoDigits; j <= maxValueTwoDigits; j++)
+                {
+                    int product = i * j;
+                    if (product.ReverseNumber() == product)
+                    {
+                        if (product > largestPalindrome)
+                            largestPalindrome = product; 
+                    }
+                }
+            }
+
+            Assert.True(largestPalindrome == expectedValueTwoDigits);
+        }
     }
 }
